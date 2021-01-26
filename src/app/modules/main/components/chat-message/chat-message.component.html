@@ -1,0 +1,17 @@
+<div [class.message_reversed]="reply" class="message">
+  <div class="message__avatar">
+    <div class="avatar"></div>
+  </div>
+
+  <div class="message__content">
+    <div class="content">
+      <div [class.content__header_reversed]="reply" class="content__header">
+        <div class="content__user-name">{{name}}</div>
+        <div class="content__message-date">{{date | date}}</div>
+      </div>
+      <div class="content__body">
+        <div class="content__body-text">{{text}}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,21 @@ import {Component, OnInit} from '@angular/core';
 import {ChatBotService} from '../../../../core/api/chat-bot.service';
 import {RecommendationChatMessage} from '../../../../core/models/recommendation-chat-message.model';
 
+class ChatComponentMessage {
+  username: string;
+  date: Date;
+  text: string;
+  reply: boolean;
+
+  constructor(text: string, reply: boolean, username: string, date: Date) {
+    this.username = username;
+    this.date = date;
+    this.text = text;
+    this.reply = reply;
+  }
+}
+
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -9,8 +24,9 @@ import {RecommendationChatMessage} from '../../../../core/models/recommendation-
 })
 export class ChatComponent implements OnInit {
 
-  messages: RecommendationChatMessage[] = [];
   private USER_ID = 0;
+  messages: ChatComponentMessage[] = [];
+  private USER_NAME = 'Bob';
 
 
   constructor(private chatBotService: ChatBotService) {
@@ -30,11 +46,18 @@ export class ChatComponent implements OnInit {
   }
 
   addUserMessage(text: string): void {
-    console.log(text);
-    this.messages.push(new RecommendationChatMessage(text, null));
+    const userMessage = new ChatComponentMessage(text, false, this.USER_NAME, new Date());
+    this.messages.push(userMessage);
   }
 
   addBotMessage(message: RecommendationChatMessage): void {
-    this.messages.push(message);
+    this.messages.push(new ChatComponentMessage(message.text, true, 'Bot', new Date()));
+
+    for (const film of message.films) {
+      this.messages.push(new ChatComponentMessage(film.name, true, 'Bot', new Date()));
+      this.messages.push(new ChatComponentMessage(film.description, true, 'Bot', new Date()));
+    }
   }
+
+
 }
