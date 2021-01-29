@@ -11,7 +11,8 @@ export class ChatBotService {
   constructor(private readonly http: HttpClient) {
   }
 
-  getAllGlobalRoles(text: string, userId: number): Observable<RecommendationChatMessage> {
+  // TODO: rename?
+  sendMessage(text: string, userId: number): Observable<RecommendationChatMessage> {
     const data = {
       userId,
       text
