@@ -45,10 +45,10 @@ export class RecommendationChatComponent implements OnInit {
   }
 
   private createUserMessage(text: string): ChatMessage {
-    return {name: this.USER_NAME, text, reply: false, date: new Date()};
+    return {name: this.USER_NAME, text, reply: true, date: new Date()};
   }
 
   private createBotMessage(text: string): ChatMessage {
-    return {name: this.BOT_NAME, text, reply: true, date: new Date()};
+    return {name: this.BOT_NAME, text, reply: false, date: new Date()};
   }
 }
