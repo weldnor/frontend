@@ -1,1 +1,35 @@
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
+
+
+<div (click)="openChat()" *ngIf="!chatIsOpen" class="open-chat-button">
+  <div class="open-chat-button__icon">
+    <nb-icon icon="message-circle-outline"></nb-icon>
+  </div>
+</div>
+
+
+<div *ngIf="chatIsOpen" class="recommendation-chat">
+  <div (click)="closeChat()" class="recommendation-chat__close-button">
+    <div class="close-button">
+      <nb-icon icon="close-outline"></nb-icon>
+    </div>
+  </div>
+  <div class="recommendation-chat__chat">
+    <app-recommendation-chat></app-recommendation-chat>
+  </div>
+</div>
