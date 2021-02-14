@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {MainModule} from './routed/main/main.module';
 import {RecommendationChatModule} from './features/recommendation-chat/recommendation-chat.module';
+import {CoreModule} from './features/core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import {RecommendationChatModule} from './features/recommendation-chat/recommend
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
-    NbEvaIconsModule,
     NbIconModule,
+    NbEvaIconsModule,
     MainModule,
-    RecommendationChatModule
+    RecommendationChatModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
