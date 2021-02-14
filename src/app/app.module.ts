@@ -7,8 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {NbIconModule, NbLayoutModule, NbThemeModule} from '@nebular/theme';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
-import {MainModule} from './modules/main/main.module';
-import {SharedModule} from './modules/shared/shared.module';
+import {MainModule} from './routed/main/main.module';
+import {RecommendationChatModule} from './features/recommendation-chat/recommendation-chat.module';
 
 @NgModule({
   declarations: [
@@ -22,9 +22,9 @@ import {SharedModule} from './modules/shared/shared.module';
     NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
     NbEvaIconsModule,
-    MainModule,
-    SharedModule,
     NbIconModule,
+    MainModule,
+    RecommendationChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,18 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NbChatModule} from '@nebular/theme';
 import {RecommendationChatComponent} from './components/recommendation-chat/recommendation-chat.component';
+import {NbChatModule} from '@nebular/theme';
 
 
 @NgModule({
   declarations: [RecommendationChatComponent],
   exports: [
-    RecommendationChatComponent,
+    RecommendationChatComponent
   ],
   imports: [
     CommonModule,
-    NbChatModule,
+    NbChatModule
   ]
 })
-export class SharedModule {
+export class RecommendationChatModule {
 }
