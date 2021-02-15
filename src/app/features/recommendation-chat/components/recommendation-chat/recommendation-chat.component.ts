@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChatBotService} from '../../../../core/api/chat-bot.service';
+import {ChatBotService} from '../../../core/services/chat-bot.service';
 
 
 interface ChatMessage {

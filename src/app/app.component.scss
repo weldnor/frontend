@@ -1,50 +1,13 @@
-@import '../themes';
-
-.open-chat-button {
-  display: flex;
-  align-items: center;
-  justify-content: center; //выравниваем иконку по центру
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  padding: 15px;
-  z-index: 100;
-  background-color: nb-theme(background-basic-color-1);
-  box-shadow: nb-theme(shadow);
-  border-radius: 50%;
-
-  &:hover {
-    background-color: nb-theme(background-basic-color-2);
-  }
-}
-
-.recommendation-chat {
-  display: flex;
-  flex-direction: column;
+.open_button {
   position: fixed;
   bottom: 40px;
   right: 40px;
   z-index: 100;
 }
 
-.recommendation-chat__close-button {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.recommendation-chat__chat {
-  width: 500px;
-  height: 550px;
-  padding: 8px;
-}
-
-.close-button {
-  padding: 6px;
-  background-color: nb-theme(background-basic-color-2);
-  box-shadow: nb-theme(shadow);
-  border-radius: 50%;
-
-  &:hover {
-    background-color: nb-theme(background-basic-color-3);
-  }
+.chat {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
 }
